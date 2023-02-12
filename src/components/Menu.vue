@@ -8,7 +8,7 @@
 <style>
 .nav {
   display: flex;
-  flex-direction: column;
-  gap: 5px;
+  gap: 20px;
+  font-size: 17pt;
 }
 </style>
