@@ -21,9 +21,9 @@ import Menu from '@/components/Menu.vue';
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100vh;
+  width: 100vw;
 }
 header {
-  line-height: 1.5;
-  max-height: 100vh;
 }
 </style>
