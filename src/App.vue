@@ -4,11 +4,6 @@ import { RouterView } from 'vue-router';
 
 <template>
   <div class="container">
-    <header>
-      <div class="wrapper">
-        <h1>Pokémon</h1>
-      </div>
-    </header>
     <RouterView />
   </div>
 </template>
@@ -23,7 +18,6 @@ import { RouterView } from 'vue-router';
   width: 100vw;
   padding: 20px;
 }
-
 .wrapper > h1 {
   width: 100%;
   color: orangered;

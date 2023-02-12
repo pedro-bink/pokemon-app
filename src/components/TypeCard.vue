@@ -31,7 +31,8 @@ export default {
 .stat,
 .value {
   font-size: large;
-  font-weight: 600;
+  position: absolute;
+  top: 15px;
 }
 .value {
   font-size: small;
@@ -50,7 +51,7 @@ export default {
 
 @media (max-width: 500px) {
   .stat {
-    font-size: 10pt;
+    font-size: 9pt;
   }
   .card-type {
     padding: 0px;

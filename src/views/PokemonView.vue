@@ -2,8 +2,10 @@
 import PokemonCard from '@/components/PokemonCard.vue';
 import FetchPokemon from '../services/api.vue';
 import { usePokemonStore } from '../store/PokemonStore';
+import { useToast } from 'vue-toastification';
 
 const pokemonStore = usePokemonStore();
+const toast = useToast();
 
 export default {
   data() {
@@ -20,7 +22,9 @@ export default {
         })
         .catch((error) => {
           console.error(error);
+          toast.error('Pokémon não encontrado');
         });
+      this.pokemonNameOrId = '';
     },
   },
 
@@ -30,10 +34,11 @@ export default {
 
 <template>
   <div class="container">
+    <h2>POKEMON APP</h2>
     <form v-on:submit.prevent="handleSubmit">
       <input
         type="text"
-        placeholder="Qual pokemon deseja buscar?"
+        placeholder="Qual pokémon deseja buscar?"
         v-model="pokemonNameOrId"
       />
 
@@ -50,14 +55,14 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   max-width: 800px;
-  width: 100%;
-  height: 100%;
   background-color: rgb(82, 176, 255);
   border-radius: 10px;
 }
-
+h2 {
+  color: black !important;
+}
 .content {
   display: 100%;
   width: 100%;
@@ -73,25 +78,42 @@ form {
   width: 100%;
 }
 
+input,
+button {
+  font-family: 'Pokemon Solid';
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: 2px;
+}
+
 input {
   border-radius: 10px;
   max-width: 400px;
   width: 100%;
-  padding: 10px;
+  padding: 5px;
   text-align: center;
+  border: 2px solid rgb(65, 105, 171);
+  background-color: rgb(251, 223, 51);
+}
+
+input::placeholder {
+  color: rgb(65, 105, 171);
 }
 
 button {
-  padding: 10px;
   max-width: 150px;
   width: 100%;
   border-radius: 10px;
-  background-color: white;
-  font-weight: bold;
+  border: 2px solid rgb(65, 105, 171);
+  background-color: orangered;
+  position: relative;
+  color: white;
 }
 
 button:hover {
   background-color: orangered;
   color: white;
+  top: -2px;
+  box-shadow: 0 2px 2px #666;
 }
 </style>

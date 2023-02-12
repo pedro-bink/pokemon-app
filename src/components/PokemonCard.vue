@@ -92,10 +92,6 @@ export default {
 </template>
 
 <style>
-h1 {
-  font-weight: 700;
-}
-
 .header,
 .card {
   display: flex;
@@ -113,7 +109,7 @@ h1 {
   max-width: 600px;
   width: 100%;
   margin: 0 auto;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.35);
 }
 
 .header {
@@ -147,10 +143,13 @@ h1 {
 .baseType {
   border-radius: 5px;
   color: white;
-  width: 70px;
-  text-align: center;
-  font-weight: 600;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 3px;
+  padding: 5px;
 }
 
 .status {

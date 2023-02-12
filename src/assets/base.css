@@ -1,6 +1,28 @@
 /* color palette from <https://github.com/vuejs/theme> */
 
-@import url('https://fonts.cdnfonts.com/css/pokemon-solid%27');
+@font-face {
+  font-family: 'Pokemon Hollow';
+  src: url('PokemonHollowNormal.eot');
+  src: url('PokemonHollowNormal.eot?#iefix') format('embedded-opentype'),
+    url('PokemonHollowNormal.woff2') format('woff2'),
+    url('PokemonHollowNormal.woff') format('woff'),
+    url('PokemonHollowNormal.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pokemon Solid';
+  src: url('PokemonSolidNormal.eot');
+  src: url('PokemonSolidNormal.eot?#iefix') format('embedded-opentype'),
+    url('PokemonSolidNormal.woff2') format('woff2'),
+    url('PokemonSolidNormal.woff') format('woff'),
+    url('PokemonSolidNormal.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --vt-c-white: #ffffff;
@@ -62,14 +84,15 @@
 }
 
 body {
-  font-family: 'Pokemon Solid', sans-serif;
+  font-family: 'Pokemon Solid';
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: 2px;
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
-
-  font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
