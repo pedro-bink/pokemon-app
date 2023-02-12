@@ -81,7 +81,7 @@ form {
 
 input,
 button {
-  font-family: 'Pokemon Solid';
+  font-family: 'BioRhyme', serif;
   font-weight: normal;
   font-style: normal;
   letter-spacing: 2px;
@@ -91,7 +91,7 @@ input {
   border-radius: 10px;
   max-width: 400px;
   width: 100%;
-  padding: 5px;
+  padding: 10px;
   text-align: center;
   border: 2px solid rgb(65, 105, 171);
   background-color: rgb(251, 223, 51);
@@ -109,6 +109,7 @@ button {
   background-color: orangered;
   position: relative;
   color: white;
+  padding: 5px;
 }
 
 button:hover {
