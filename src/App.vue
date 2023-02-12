@@ -1,16 +1,14 @@
 <script setup>
 import { RouterView } from 'vue-router';
-import Menu from '@/components/Menu.vue';
 </script>
 
 <template>
   <div class="container">
     <header>
       <div class="wrapper">
-        <Menu />
+        <h1>Pokémon</h1>
       </div>
     </header>
-
     <RouterView />
   </div>
 </template>
@@ -23,7 +21,11 @@ import Menu from '@/components/Menu.vue';
   justify-content: center;
   height: 100vh;
   width: 100vw;
+  padding: 20px;
 }
-header {
+
+.wrapper > h1 {
+  width: 100%;
+  color: orangered;
 }
 </style>

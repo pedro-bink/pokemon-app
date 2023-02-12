@@ -1,33 +1,26 @@
 <script>
-import { reactive } from 'vue';
-import axios from 'axios';
 import PokemonCard from '@/components/PokemonCard.vue';
+import FetchPokemon from '../services/api.vue';
+import { usePokemonStore } from '../store/PokemonStore';
+
+const pokemonStore = usePokemonStore();
 
 export default {
   data() {
     return {
-      pokemon: reactive({}),
-      pokemonName: '',
+      pokemonNameOrId: '',
     };
   },
+
   methods: {
     handleSubmit() {
-      console.log(this.pokemonName);
-
-      axios
-        .get(`https://pokeapi.co/api/v2/pokemon/${this.pokemonName}`)
-        .then((response) => {
-          console.log(response.data);
-          this.pokemon = {
-            id: response.data.id,
-            name: response.data.name,
-            image: response.data.sprites.front_default,
-            stats: response.data.stats,
-            type: { ...response.data.types },
-          };
+      FetchPokemon(this.pokemonNameOrId)
+        .then((pokemon) => {
+          pokemonStore.setPokemon(pokemon);
+        })
+        .catch((error) => {
+          console.error(error);
         });
-
-      this.pokemonName = '';
     },
   },
 
@@ -41,13 +34,13 @@ export default {
       <input
         type="text"
         placeholder="Qual pokemon deseja buscar?"
-        v-model="this.pokemonName"
+        v-model="pokemonNameOrId"
       />
 
       <button type="submit">Buscar</button>
     </form>
     <div class="content">
-      <PokemonCard :pokemon="this.pokemon" />
+      <PokemonCard />
     </div>
   </div>
 </template>
@@ -61,12 +54,13 @@ export default {
   max-width: 800px;
   width: 100%;
   height: 100%;
-  background-color: rgb(33, 31, 31);
+  background-color: rgb(82, 176, 255);
   border-radius: 10px;
 }
 
 .content {
   display: 100%;
+  width: 100%;
 }
 
 form {
