@@ -34,7 +34,7 @@ export default {
 
 <template>
   <div class="container">
-    <h2>POKEMON APP</h2>
+    <h2>Pokémon App</h2>
     <form v-on:submit.prevent="handleSubmit">
       <input
         type="text"
@@ -62,6 +62,7 @@ export default {
 }
 h2 {
   color: black !important;
+  font-weight: 700;
 }
 .content {
   display: 100%;

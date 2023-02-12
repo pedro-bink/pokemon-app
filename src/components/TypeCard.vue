@@ -51,10 +51,18 @@ export default {
 
 @media (max-width: 500px) {
   .stat {
-    font-size: 9pt;
+    font-size: 10pt;
+    text-align: center;
   }
   .card-type {
     padding: 0px;
+  }
+}
+
+@media (max-width: 500px) {
+  .stat {
+    font-size: 8pt;
+    text-align: center;
   }
 }
 </style>
